@@ -1,6 +1,5 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
 import 'package:recipe_app/core/utils/resources/data_state.dart';
 import 'package:recipe_app/modules/recipe_search/domain/enitity/recipe_search_entity.dart';
 import 'package:recipe_app/modules/recipe_search/domain/usercase/search_api_usecase.dart';
@@ -13,7 +12,6 @@ class RecipeSearchBloc extends Bloc<RecipeSearchEvent, RecipeSearchState> {
   RecipeSearchBloc(this.searchApiUsecase) : super(RecipeSearchInitial()) {
     on<SearchQueryEvent>((event, emit) async {
       emit(RecipeSearchLoding());
-
       try {
         DataState<RecipeSearchEntity> response =
             await searchApiUsecase.call({"query": event.query});

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:recipe_app/modules/recipe_search/ui/controllers/bloc/recipe_search_bloc.dart';
 
 class RecipeSearchScreen extends StatelessWidget {
   const RecipeSearchScreen({super.key});
@@ -13,7 +15,11 @@ class RecipeSearchScreen extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
       ),
-      body: Column(children: [SearchField()]),
+      body: BlocBuilder<RecipeSearchBloc, RecipeSearchState>(
+        builder: (context, state) {
+          return Column(children: [SearchField()]);
+        },
+      ),
     );
   }
 }
@@ -29,7 +35,10 @@ class SearchField extends StatelessWidget {
           trailing: [
             IconButton(onPressed: () {}, icon: const Icon(Icons.search))
           ],
-        )
+        ),
+        LinearProgressIndicator(
+          backgroundColor: Colors.transparent,
+        ),
       ],
     );
   }

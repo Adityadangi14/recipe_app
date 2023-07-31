@@ -7,14 +7,13 @@ class Hits extends Equatable {
   Hits({this.recipe});
 
   Hits.fromJson(Map<String, dynamic> json) {
-    recipe =
-        json['recipe'] != null ? new Recipe.fromJson(json['recipe']) : null;
+    recipe = json['recipe'] != null ? Recipe.fromJson(json['recipe']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.recipe != null) {
-      data['recipe'] = this.recipe!.toJson();
+    final Map<String, dynamic> data = <String, dynamic>{};
+    if (recipe != null) {
+      data['recipe'] = recipe!.toJson();
     }
     return data;
   }

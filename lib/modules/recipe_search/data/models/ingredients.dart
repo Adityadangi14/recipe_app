@@ -33,14 +33,14 @@ class Ingredients extends Equatable {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['text'] = this.text;
-    data['quantity'] = this.quantity;
-    data['measure'] = this.measure;
-    data['food'] = this.food;
-    data['weight'] = this.weight;
-    data['foodCategory'] = this.foodCategory;
-    data['foodId'] = this.foodId;
-    data['image'] = this.image;
+    data['text'] = text;
+    data['quantity'] = quantity;
+    data['measure'] = measure;
+    data['food'] = food;
+    data['weight'] = weight;
+    data['foodCategory'] = foodCategory;
+    data['foodId'] = foodId;
+    data['image'] = image;
     return data;
   }
 

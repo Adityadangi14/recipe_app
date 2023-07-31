@@ -10,30 +10,27 @@ class Images extends Equatable {
 
   Images.fromJson(Map<String, dynamic> json) {
     tHUMBNAIL = json['THUMBNAIL'] != null
-        ? new THUMBNAIL.fromJson(json['THUMBNAIL'])
+        ? THUMBNAIL.fromJson(json['THUMBNAIL'])
         : null;
-    sMALL =
-        json['SMALL'] != null ? new THUMBNAIL.fromJson(json['SMALL']) : null;
-    rEGULAR = json['REGULAR'] != null
-        ? new THUMBNAIL.fromJson(json['REGULAR'])
-        : null;
-    lARGE =
-        json['LARGE'] != null ? new THUMBNAIL.fromJson(json['LARGE']) : null;
+    sMALL = json['SMALL'] != null ? THUMBNAIL.fromJson(json['SMALL']) : null;
+    rEGULAR =
+        json['REGULAR'] != null ? THUMBNAIL.fromJson(json['REGULAR']) : null;
+    lARGE = json['LARGE'] != null ? THUMBNAIL.fromJson(json['LARGE']) : null;
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    if (this.tHUMBNAIL != null) {
-      data['THUMBNAIL'] = this.tHUMBNAIL!.toJson();
+    final Map<String, dynamic> data = Map<String, dynamic>();
+    if (tHUMBNAIL != null) {
+      data['THUMBNAIL'] = tHUMBNAIL!.toJson();
     }
-    if (this.sMALL != null) {
-      data['SMALL'] = this.sMALL!.toJson();
+    if (sMALL != null) {
+      data['SMALL'] = sMALL!.toJson();
     }
-    if (this.rEGULAR != null) {
-      data['REGULAR'] = this.rEGULAR!.toJson();
+    if (rEGULAR != null) {
+      data['REGULAR'] = rEGULAR!.toJson();
     }
-    if (this.lARGE != null) {
-      data['LARGE'] = this.lARGE!.toJson();
+    if (lARGE != null) {
+      data['LARGE'] = lARGE!.toJson();
     }
     return data;
   }
@@ -57,10 +54,10 @@ class THUMBNAIL extends Equatable {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['url'] = this.url;
-    data['width'] = this.width;
-    data['height'] = this.height;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['url'] = url;
+    data['width'] = width;
+    data['height'] = height;
     return data;
   }
 
